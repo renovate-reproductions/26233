@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "gitlab-tags",
+      "fileMatch": ["^values\\.yaml$"],
+      "matchStrings": [
+        "git:\\s{1,}ref:\\s{1,}tag\\s{1,}targetRef:\\s{1,}(?<currentValue>.*)\\s{1,}targetUrl:\\s{1,}(?<registryUrl>(.+?(?=\\\/)){3}?)\\\/(?<depName>(.+?(?=\\.)))"
+      ]
+    }
+  ]
+}
